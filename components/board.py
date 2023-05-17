@@ -42,6 +42,15 @@ class Board:
             piece.col = new_col
 
     def is_valid_move(self, current_row, current_col, new_row, new_col):
-    
-        # Return True if the move is valid, otherwise return False
-        return True  
+        piece = self.grid[current_row][current_col]
+        color = piece.color
+        if color == WHITE:
+            # White pieces can move up one row and only to columns left or right from their position
+            if new_row == current_row - 1 and abs(new_col - current_col) == 1:
+                return True
+        elif color == BLACK:
+            # Black pieces can move down one row and only to columns left or right from their position
+            if new_row == current_row + 1 and abs(new_col - current_col) == 1:
+                return True
+
+        return False
