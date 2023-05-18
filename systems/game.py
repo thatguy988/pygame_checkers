@@ -1,6 +1,6 @@
 import pygame
 import sys
-from components.board import Board
+from components.board import CheckersBoard
 
 WIDTH, HEIGHT = 800, 800
 rows, cols = 8, 8
@@ -8,7 +8,7 @@ rows, cols = 8, 8
 class Game:
     def __init__(self):
         square_size = WIDTH // cols
-        self.board = Board(rows, cols, square_size)
+        self.board = CheckersBoard(rows, cols, square_size) 
         self.board.create_pieces()
         self.selected_piece = None
         self.dragging = False
