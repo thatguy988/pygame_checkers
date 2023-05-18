@@ -2,27 +2,34 @@ Pygame Checkers Documentation
 
 
 Introduction:
-The Pygame Checkers program is a simple implementation of the traditional checkers game using the Pygame library. It is an 8x8 checkerboard. The game supports mouse input for selecting and dragging game pieces.
+The Pygame Checkers and Chess program is a simple implementation of the traditional checkers and chess games using the Pygame library. It is an 8x8 checkerboard. The game supports mouse input for selecting and dragging game pieces.
 
 Project Structure:
 
 The program consists of the following files and classes:
 
-main.py: This is the entry point of the program. It initializes the game and starts the game loop.
+checkers.py: This is the entry point of the program. User chooses between checkers and chess. It initializes the game and starts the game loop.
 
-Allows Pygame Checkers program to run, execute the following command in the terminal to run program: python main.py
-
-systems/game.py: Contains the `Game` class that manages the game logic.
+systems/game.py: Contains the `Game` class that manages the checkers game logic.
 
 The game class is responsible for managing the game logic, including the game loop and handling user input. Game class has methods for initializing the game, running the game loop, and handling mouse input.
 
+systems/chess_game.py: Contains the `ChessGame` class that manages the chess game logic.
+
+The ChessGame class is responsible for managing the game logic, including the game loop and handling user input. Game class has methods for initializing the game, running the game loop, and handling mouse input.
+
 components/board.py: Contains the `Board` class that represents the game board.
 
-The board represents the game board and contains the grid of game pieces. The board class has methods for creating the initial game setup and drawing the board and pieces on the screen.
+The board represents the game board and contains the grid of game pieces. The board subclasses checkersboard and chessboard each has four methods for creating the pieces for game, rendering pieces on board, move pieces, and validate the moves.
 
 components/pieces.py: Contains the `Piece` class that represents a game piece.
 
 A Piece represent a game piece on board. Its attributes are its position, color, and king piece.Piece class has method for drawing piece on the screen 
+
+components/chess_pieces.py: Contains the 'Piece' class that represents a piece in chess game. 
+
+The six different chess pieces inherit the attributes of piece class with each having their own method for how the piece is render on screen.
+
 
 Game Controls
 - Left Mouse Button:
